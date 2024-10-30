@@ -10,7 +10,7 @@ document.getElementById('patientForm').addEventListener('submit', function(event
     const medicines = document.getElementById('medicines').value;
     const hospital = document.getElementById('hospital').value;
     const incharge = document.getElementById('incharge').value;
-    const doctor = document.getElementById('doctor').value; // Doctor field
+    const doctor = document.getElementById('doctor').value;
 
     // Determine condition class for color-coding
     let conditionClass;
@@ -22,9 +22,9 @@ document.getElementById('patientForm').addEventListener('submit', function(event
         conditionClass = "stable";
     }
 
-    // Display assigned doctor at the top
+    // Display assigned doctor at the top of the patient profile
     const doctorAssignedDiv = document.getElementById('doctorAssigned');
-    doctorAssignedDiv.textContent = `Doctor Assigned: Dr. ${doctor}`;
+    doctorAssignedDiv.textContent = `Assigned Doctor: Dr. ${doctor}`;
 
     // Display patient information
     const patientInfoDiv = document.getElementById('patientInfo');
@@ -39,7 +39,6 @@ document.getElementById('patientForm').addEventListener('submit', function(event
         <p><strong>Medicines Given:</strong> ${medicines}</p>
         <p><strong>Hospital:</strong> ${hospital}</p>
         <p><strong>Ambulance In-charge:</strong> ${incharge}</p>
-        <p><strong>Doctor Assigned:</strong> ${doctor}</p>
     `;
 
     // Clear form
