@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accident Information Form</title>
+    <title>Patient Information System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Patient Information Form</h1>
-        <form id="accidentForm">
-            <label for="image">Upload Image:</label>
-            <input type="file" id="image" name="image" accept="image/*" required><br>
-
+        <form id="patientForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br>
 
@@ -27,10 +24,11 @@
             </select><br>
 
             <label for="condition">Condition:</label>
-            <input type="text" id="condition" name="condition" required><br>
-
-            <label for="criticalness">Criticalness:</label>
-            <input type="text" id="criticalness" name="criticalness" required><br>
+            <select id="condition" name="condition" required>
+                <option value="critical">Critical</option>
+                <option value="moderate">Moderate</option>
+                <option value="stable">Stable</option>
+            </select><br>
 
             <label for="reason">Reason for Accident:</label>
             <textarea id="reason" name="reason" rows="3" required></textarea><br>
@@ -44,8 +42,18 @@
             <label for="incharge">Ambulance In-charge Name:</label>
             <input type="text" id="incharge" name="incharge" required><br>
 
+            <label for="doctor">Doctor Assigned:</label>
+            <input type="text" id="doctor" name="doctor" required><br>
+
             <button type="submit">Submit</button>
         </form>
+
+        <!-- Section for displaying the assigned doctor's name -->
+        <div id="doctorAssigned" class="doctor-assigned"></div>
+
+        <div id="patientInfo" class="patient-info">
+            <!-- Patient details will display here -->
+        </div>
     </div>
 
     <script src="script.js"></script>
